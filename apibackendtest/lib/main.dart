@@ -1,5 +1,6 @@
 import 'package:apibackendtest/Services/api_file.dart';
 import 'package:apibackendtest/Services/apimodel.dart';
+import 'package:apibackendtest/widgets/PhotoScreen.dart';
 import 'package:apibackendtest/widgets/futurewidget.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
@@ -56,14 +57,25 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             MaterialButton(
-              onPressed: () {
+              color: Color.fromARGB(219, 31, 188, 0)
+              ,onPressed: () {
                 Navigator.of(context)
                     .push(MaterialPageRoute(builder: (context) {
                   return FutureWidget(Futuredata: Futuredata);
-                }));
+                })
+              );
               },
               child: Text("Small Size JSON"),
-            )
+            ),
+            ElevatedButton(onPressed: (){
+              Navigator.of(context)
+                    .push(MaterialPageRoute(builder: (context) {
+                  return PhotoListScreen();
+                })
+              );
+            }, 
+            child: Text("Large Size JSON"))
+          
           ],
         ),
       ),

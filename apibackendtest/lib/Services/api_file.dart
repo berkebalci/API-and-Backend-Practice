@@ -11,7 +11,8 @@ class Internet {
         .get(Uri.parse('https://jsonplaceholder.typicode.com/albums/1'));
     //http.get() ile network request yapıyoruz.
 
-    if (response.statusCode == 200) {
+    if (response.statusCode == 200) { //Eğer parslamada(Verilen json stringini çözümlemede)
+     //**başarılı olunduysa statusCode 200 oluyor.
       return InternetModel.fromjson(jsonDecode(response.body));
     } 
     else {

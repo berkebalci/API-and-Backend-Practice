@@ -7,27 +7,24 @@ import 'package:http/http.dart' as http;
 
 import 'package:apibackendtest/Services/apimodel.dart';
 
-class InternetModel2 {
+class Photo {
   final int albumId;
-  final int id;
+  final int id; //This class is Photos' model class
   final String title;
   final String url;
   final String thumbnailUrl;
-  InternetModel2({
-    required this.albumId,
-    required this.id,
-    required this.title,
-    required this.url,
-    required this.thumbnailUrl
-  });
-  factory InternetModel2.fromJson(Map<String, dynamic> json) {
-    return InternetModel2(
-        albumId: json['albumId'] as int, 
-        id: json['id'] as int, 
+  Photo(
+      {required this.albumId,
+      required this.id,
+      required this.title,
+      required this.url,
+      required this.thumbnailUrl});
+  factory Photo.fromJson(Map<String, dynamic> json) {
+    return Photo(
+        albumId: json['albumId'] as int,
+        id: json['id'] as int,
         title: json['title'] as String,
         url: json['url'] as String,
-        thumbnailUrl: json['thumbnailUrl'] as String
-        );
-        
+        thumbnailUrl: json['thumbnailUrl'] as String);
   }
 }
