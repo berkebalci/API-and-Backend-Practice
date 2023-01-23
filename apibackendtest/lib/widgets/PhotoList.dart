@@ -14,7 +14,9 @@ class PhotoList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GridView.builder( //TODO: Gridview'a da bak
-        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+        scrollDirection: Axis.vertical,
+        shrinkWrap: true
+        ,gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
         ),
         itemCount: photos.length,

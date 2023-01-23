@@ -15,7 +15,8 @@ class FutureWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
+      appBar: AppBar(title: Text("Small Size JSON"))
+      ,body: Center(
           child: FutureBuilder<InternetModel>(
           future: Futuredata,
           builder: (context, snapshot) {

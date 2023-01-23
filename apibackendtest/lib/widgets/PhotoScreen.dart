@@ -19,24 +19,24 @@ class PhotoListScreen extends StatelessWidget {
     var object = PhotoModifier();
     return Scaffold(
       appBar: AppBar(title: Text("Large JSON List")),
-      body: Column(children: [
-        FutureBuilder<List<Photo>>(
+      body: Column(
+        children: [
+          FutureBuilder<List<Photo>>(
             future: object.getPhotos(http.Client()),
             builder: (context, snapshot) {
               if (snapshot.hasError) {
-                return Center(
-                  child: Text("An error has occured")
-                );
-              } 
-              else if (snapshot.hasData) {
+                return Center(child: Text("An error has occured"));
+              } else if (snapshot.hasData) {
                 return PhotoList(photos: snapshot.data!);
-              } 
-              else {
-                return  const CircularProgressIndicator();
+              } else {
+                return const CircularProgressIndicator();
               }
             },
-            )
-      ]),
+          ),
+        ],
+      ),
     );
   }
+  //TODO: 'Layouts in Flutter' makalesini oku
+  //TODO: Bu programı kendin yazmaya çalış(örn: metodu silip bakmadan kendin yaz,vs.)
 }

@@ -54,28 +54,27 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Center(
         child: Column(
+          mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             MaterialButton(
-              color: Color.fromARGB(219, 31, 188, 0)
-              ,onPressed: () {
+              color: Color.fromARGB(219, 31, 188, 0),
+              onPressed: () {
                 Navigator.of(context)
                     .push(MaterialPageRoute(builder: (context) {
                   return FutureWidget(Futuredata: Futuredata);
-                })
-              );
+                }));
               },
               child: Text("Small Size JSON"),
             ),
-            ElevatedButton(onPressed: (){
-              Navigator.of(context)
-                    .push(MaterialPageRoute(builder: (context) {
-                  return PhotoListScreen();
-                })
-              );
-            }, 
-            child: Text("Large Size JSON"))
-          
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.of(context)
+                      .push(MaterialPageRoute(builder: (context) {
+                    return PhotoListScreen();
+                  }));
+                },
+                child: Text("Large Size JSON"))
           ],
         ),
       ),
